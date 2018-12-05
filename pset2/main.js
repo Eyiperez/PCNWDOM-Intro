@@ -67,5 +67,70 @@ const playlist = {
       artists: ['Mariah Carey'],
       image: 'https://i.scdn.co/image/770180da03a8e23ac5ff7847496e9538cf73ce85'
     }
+
   ]
 };
+
+const objectToHTML = (song) => {
+  return `<div class='row mb-2'>
+  <div class='col-1'>
+    <img src="${song.image}" class="rounded" style='width: 50px; height: 50px;'>
+  </div>
+  <div class='col-11'>
+    <p class='mb-0 mt-1 song-name'>${song.name}</p>
+    <p class='my-0 song-artists'>${song.artists}</p>
+  </div>
+</div>`;
+}
+
+const render = () => {
+
+  const title = document.querySelector('h1');
+  title.innerText = playlist.name;
+
+  const desc = document.querySelector('.lead');
+  desc.innerText = playlist.description;
+
+  const song_list = document.querySelector('.song-list');
+
+  let combinedHTML = '';
+  for (let i = 0; i < playlist.songs.length; i++) {
+    combinedHTML += objectToHTML(playlist.songs[i]);
+  }
+
+  song_list.innerHTML = combinedHTML;
+  //console.log(combinedHTML);
+}
+
+render(playlist);
+
+
+
+const input = document.querySelector('.js-input');
+
+input.addEventListener('input', function (e) {
+  const inputTyped = e.target.value.toLocaleLowerCase();
+
+  console.log(inputTyped);
+  //const inputArr = inputTyped.split('');
+
+  for (let i = 0; i < playlist.songs.length; i++) {
+    const songName = playlist.songs[i].name.toLocaleLowerCase();
+
+    //const songNameArr = songName.split('');
+    //console.log(songName);
+
+
+    if (songName.indexOf(e) === -1) {
+      console.log(inputTyped.indexOf(e));
+
+      console.log(songName)
+      console.log("you did it");
+     playlist.songs.splice(i, 1);
+      console.log(i);
+
+    }
+
+  }
+  render(playlist);
+});

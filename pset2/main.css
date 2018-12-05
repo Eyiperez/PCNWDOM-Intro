@@ -21,3 +21,7 @@ body {
 .row:hover {
   background-color: #383838;
 }
+
+.input-box {
+  margin-bottom: 60px;
+}
