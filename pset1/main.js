@@ -66,8 +66,22 @@ const playlist = {
       name: 'All I Want for Christmas Is You',
       artists: ['Mariah Carey'],
       image: 'https://i.scdn.co/image/770180da03a8e23ac5ff7847496e9538cf73ce85'
+    },
+    {
+      name: 'All I Want for Christmas Is You',
+      artists: ['Mariah Carey'],
+      image: 'https://i.scdn.co/image/770180da03a8e23ac5ff7847496e9538cf73ce85'
+    },
+    {
+      name: 'All I Want for Christmas Is You',
+      artists: ['Mariah Carey'],
+      image: 'https://i.scdn.co/image/770180da03a8e23ac5ff7847496e9538cf73ce85'
+    },
+    {
+      name: 'All I Want for Christmas Is You',
+      artists: ['Mariah Carey'],
+      image: 'https://i.scdn.co/image/770180da03a8e23ac5ff7847496e9538cf73ce85'
     }
-
   ]
 };
 
@@ -99,36 +113,7 @@ const render = () => {
   }
 
   song_list.innerHTML = combinedHTML;
-  //console.log(combinedHTML);
+  console.log(combinedHTML);
 }
 
-render(playlist);
-
-
-
-const input = document.querySelector('.js-input');
-
-input.addEventListener('input', function (e) {
-  const inputTyped = e.target.value.toLocaleLowerCase();
-
-  console.log(inputTyped);
-  //const inputArr = inputTyped.split('');
-
-  for (let i = 0; i < playlist.songs.length; i++) {
-    const songName = playlist.songs[i].name.toLocaleLowerCase();
-
-    //const songNameArr = songName.split('');
-    //console.log(songName);
-    if (songName.indexOf(inputTyped) === -1) {
-      console.log(inputTyped.indexOf(inputTyped));
-
-      console.log(songName)
-      console.log("you did it");
-      playlist.songs.splice(i, 1);
-      console.log(i);
-
-    }
-
-  }
-  render(playlist);
-});
+render();
