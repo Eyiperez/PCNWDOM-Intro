@@ -119,7 +119,7 @@ input.addEventListener('input', function (e) {
 
     //const songNameArr = songName.split('');
     //console.log(songName);
-    if (songName.indexOf(inputTyped) === -1) {
+    if (songName == inputTyped) {
       console.log(inputTyped.indexOf(inputTyped));
 
       console.log(songName)
